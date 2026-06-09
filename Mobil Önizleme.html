@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mobil Önizleme — The Beergarita Pub</title>
+<style>
+  :root { --gold: #c99b4e; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background:
+      radial-gradient(120% 90% at 50% 0%, #241a12 0%, #140e09 55%, #0c0805 100%);
+    color: #ece6dc;
+    font-family: "Libre Franklin", system-ui, -apple-system, sans-serif;
+    min-height: 100%;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 34px 16px 60px;
+    gap: 26px;
+  }
+  .head { text-align: center; max-width: 460px; }
+  .head h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 800; font-size: 26px; margin: 0 0 8px; letter-spacing: 0.01em;
+  }
+  .head h1 b { color: var(--gold); font-weight: 800; }
+  .head p { margin: 0; color: #b3a896; font-size: 14px; line-height: 1.6; }
+
+  /* Telefon çerçevesi */
+  .phone {
+    position: relative;
+    width: 390px; max-width: 94vw;
+    aspect-ratio: 390 / 844;
+    background: #000;
+    border-radius: 52px;
+    padding: 13px;
+    box-shadow:
+      0 0 0 2px #2a2118,
+      0 0 0 11px #161009,
+      0 40px 90px -30px rgba(0,0,0,0.9),
+      0 10px 30px -10px rgba(0,0,0,0.7);
+  }
+  .phone .screen {
+    position: relative;
+    width: 100%; height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    background: #140e09;
+  }
+  .phone .notch {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 128px; height: 30px; background: #000;
+    border-bottom-left-radius: 18px; border-bottom-right-radius: 18px;
+    z-index: 5;
+  }
+  .phone iframe {
+    width: 390px; height: 844px;
+    max-width: 100%;
+    border: 0; display: block;
+    /* küçük ekranlarda çerçeveye sığması için */
+  }
+  /* iframe'i çerçeve genişliğine göre ölçekle */
+  .scaler {
+    position: absolute; inset: 0;
+    transform-origin: top left;
+  }
+
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; border: 1px solid var(--gold);
+    background: var(--gold); color: #16100a;
+  }
+  .btn.ghost { background: transparent; color: #ece6dc; border-color: rgba(236,230,220,0.35); }
+
+  .tip {
+    max-width: 460px; text-align: center; color: #8f8576; font-size: 12.5px; line-height: 1.7;
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;
+  }
+  .tip b { color: var(--gold); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>The <b>Beergarita</b> Pub — Mobil Görünüm</h1>
+    <p>Sitenin telefonda nasıl göründüğü aşağıda. Tek sütun düzen, hamburger menü ve dokunmatik galeri otomatik devreye girer.</p>
+  </div>
+
+  <div class="phone">
+    <div class="screen">
+      <div class="notch"></div>
+      <div class="scaler" id="scaler">
+        <iframe id="frame" src="The%20Beergarita%20Pub.html" title="Mobil önizleme"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn" href="The Beergarita Pub.html" target="_blank" rel="noopener">Tam Ekran Aç</a>
+    <a class="btn ghost" href="#" id="reload">Yeniden Yükle</a>
+  </div>
+
+  <div class="tip">
+    <b>Kendi telefonunda görmek için:</b> sağ üstteki paylaş/yayınla (publish) seçeneğiyle siteyi yayınla, çıkan bağlantıyı telefonunda aç. Alternatif olarak masaüstü tarayıcıda sağ tık → "İncele" (Inspect) → cihaz (telefon) ikonuyla da mobil görünümü test edebilirsin.
+  </div>
+
+  <script>
+    // iframe'i telefon ekranı genişliğine göre ölçekle (çerçeve daralırsa içerik sığsın)
+    function fit() {
+      var screen = document.querySelector('.screen');
+      var frame = document.getElementById('frame');
+      var scaler = document.getElementById('scaler');
+      var w = screen.clientWidth, h = screen.clientHeight;
+      var scale = w / 390;
+      frame.style.width = '390px';
+      frame.style.height = (h / scale) + 'px';
+      scaler.style.transform = 'scale(' + scale + ')';
+    }
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    fit();
+    document.getElementById('reload').addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.getElementById('frame');
+      f.src = f.src;
+    });
+  </script>
+</body>
+</html>

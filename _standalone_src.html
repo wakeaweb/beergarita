@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Beergarita Pub — London Pub Eatery</title>
+<meta name="description" content="The Beergarita Pub — Gayrettepe'nin Londra köşesi. Fıçı bira, burger, kokteyl ve canlı atmosfer. Semt kültürü kazanacak." />
+
+<!-- Kod içinde (JS string olarak) referans verilen görsel/video kaynakları.
+     Bundler bunları gömer; çalışma anında window.__resources[id] ile erişilir. -->
+<meta name="ext-resource-dependency" content="https://assets.mixkit.co/videos/8711/8711-720.mp4" data-resource-id="video" />
+<meta name="ext-resource-dependency" content="https://assets.mixkit.co/videos/8711/8711-thumb-720-0.jpg" data-resource-id="poster" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=1200&q=80" data-resource-id="beerPour" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" data-resource-id="barWide" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?auto=format&fit=crop&w=1200&q=80" data-resource-id="beerFoam" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80" data-resource-id="burger" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=80" data-resource-id="cocktails" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=1200&q=80" data-resource-id="whiskey" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80" data-resource-id="wineCheers" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" data-resource-id="barLights" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80" data-resource-id="bottlesSun" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1538488881038-e252a119ace7?auto=format&fit=crop&w=1200&q=80" data-resource-id="barString" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80" data-resource-id="barEdison" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1547573854-74d2a71d0826?auto=format&fit=crop&w=1200&q=80" data-resource-id="feast" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?auto=format&fit=crop&w=1200&q=80" data-resource-id="wineCheese" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" data-resource-id="fineDining" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1200&q=80" data-resource-id="facade" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=1200&q=80" data-resource-id="people" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1200&q=80" data-resource-id="steakFries" />
+<meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=1200&q=80" data-resource-id="cubaLibre" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Libre+Franklin:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Bodoni+Moda:wght@400;600;700&family=Kaushan+Script&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dir-a">
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#0a0c1c">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0a0c1c"/>
+    <circle cx="600" cy="340" r="150" fill="none" stroke="#c99b4e" stroke-width="8"/>
+    <text x="600" y="395" font-family="Georgia, serif" font-size="150" font-weight="800" fill="#c99b4e" text-anchor="middle">B</text>
+    <text x="600" y="560" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ece6dc" text-anchor="middle" letter-spacing="2">THE BEERGARITA PUB</text>
+    <text x="600" y="620" font-family="Georgia, serif" font-size="26" fill="#3fd99a" text-anchor="middle" letter-spacing="8">LONDON PUB EATERY</text>
+  </svg>
+</template>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="data-standalone.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="parts1.jsx"></script>
+<script type="text/babel" src="parts2.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
