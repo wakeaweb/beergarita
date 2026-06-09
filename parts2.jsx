@@ -195,9 +195,3 @@ function NeonBand() {
 }
 
 Object.assign(window, { Events, Gallery, Reviews, Contact, Footer, Stars, NeonBand });
-
-// ================================================================
-// ✦  CHECKPOINT: ilk animasyon  ✦  2026-06-10
-// Bileşenler: Events (neon + takvim) · Gallery (lightbox) ·
-//             Reviews · Contact · Footer · NeonBand (marquee)
-// ================================================================

@@ -678,14 +678,3 @@ section.block { padding: var(--section-pad) 0; position: relative; }
   /* Bira bardaklı görseli aşağı it */
   .hero video, .hero .poster { transform: translateY(70px) scale(1.26); transform-origin: center 42%; }
 }
-
-/* ================================================================
-   ✦  CHECKPOINT: ilk animasyon  ✦
-   Tarih   : 2026-06-10
-   Durum   : Header, Hero, About, Menu (popup görselli), Galeri,
-             Etkinlikler, Yorumlar, Footer tamamlandı.
-             Bayrak animasyonu · neon marquee · scroll-reveal · bob
-             animasyonu aktif.
-   Font    : Playfair Display (--font-head)
-             Libre Franklin (--font-body)
-   ================================================================ */

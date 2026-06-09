@@ -197,9 +197,3 @@ function ImageModal({ src, alt, onClose }) {
 }
 
 Object.assign(window, { NAV, scrollToId, Header, MobileNav, Hero, About, Menu, Bunting });
-
-// ================================================================
-// ✦  CHECKPOINT: ilk animasyon  ✦  2026-06-10
-// Bileşenler: Header · MobileNav · Bunting (bayraklar) · Hero ·
-//             About · Menu (sekme + popup görsel) · ImageModal
-// ================================================================

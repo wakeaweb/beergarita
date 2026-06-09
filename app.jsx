@@ -99,9 +99,3 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
-// ================================================================
-// ✦  CHECKPOINT: ilk animasyon  ✦  2026-06-10
-// App render tamamlandı. Scroll-reveal, hash routing (#menu vb.),
-// Tweaks paneli ve tema sistemi (Klasik/Modern) aktif.
-// ================================================================
