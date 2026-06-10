@@ -7,7 +7,7 @@
   };
 
   window.PUB = {
-    video: "https://assets.mixkit.co/videos/8711/8711-720.mp4",
+    video: "https://res.cloudinary.com/delwdsblr/video/upload/v1781050715/pikaso-beergarita-2026-06-10_sqibbp.mp4",
     poster: "https://assets.mixkit.co/videos/8711/8711-thumb-720-0.jpg",
 
     images: {
