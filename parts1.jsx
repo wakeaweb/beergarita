@@ -13,7 +13,7 @@ const NAV = [
 
 function scrollToId(id) {
   const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 78, behavior: "smooth" });
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - (-20), behavior: "smooth" });
 }
 
 function Brand({ light }) {
@@ -164,7 +164,7 @@ function Menu() {
               <div className="sub">{cat.kicker}</div>
             </div>
           </div>
-          <div className="items reveal">
+          <div className="items">
             {cat.items.map((it, i) =>
             <div className="item" key={i} 
                  style={it.popupImg ? { cursor: "pointer" } : {}}
