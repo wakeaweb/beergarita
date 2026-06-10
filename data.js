@@ -8,7 +8,7 @@
 
   window.PUB = {
     video: "https://res.cloudinary.com/delwdsblr/video/upload/v1781050715/pikaso-beergarita-2026-06-10_sqibbp.mp4",
-    poster: "https://assets.mixkit.co/videos/8711/8711-thumb-720-0.jpg",
+    poster: "https://res.cloudinary.com/delwdsblr/video/upload/so_0/v1781050715/pikaso-beergarita-2026-06-10_sqibbp.jpg",
 
     images: {
       beerPour:   U("1535958636474-b021ee887b13"),
