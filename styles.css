@@ -399,6 +399,18 @@ section.block { padding: var(--section-pad) 0; position: relative; }
 .item .d { grid-column: 1 / -1; color: var(--muted); font-size: var(--fs-sm); line-height: 1.55; }
 .menu-note { color: var(--faint); font-size: 13px; margin-top: 26px; }
 
+/* Mobil: kategori fotoğrafı buton (sekme) satırının ÜSTÜNE gelsin.
+   .menu-body display:contents ile foto+liste, .wrap'in flex bağlamına katılır;
+   böylece tek dizilim sırası belirlenebilir. Masaüstü (>=820px) etkilenmez. */
+@media (max-width: 819px) {
+  #menu .wrap { display: flex; flex-direction: column; }
+  #menu .menu-body { display: contents; }
+  #menu .menu-head  { order: 0; }
+  #menu .menu-photo { order: 1; margin-bottom: 34px; }
+  #menu .tabs       { order: 2; }
+  #menu .items      { order: 3; }
+}
+
 /* ---- ETKİNLİKLER ---- */
 .events { display: grid; gap: 16px; }
 .event {
