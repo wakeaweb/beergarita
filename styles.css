@@ -690,3 +690,29 @@ section.block { padding: var(--section-pad) 0; position: relative; }
   /* Bira bardaklı görseli aşağı it */
   .hero video, .hero .poster { transform: translateY(70px) scale(1.26); transform-origin: center 42%; }
 }
+
+/* ---- MENÜ OPSİYONLARI (size + price alt alta) ---- */
+.item-options { grid-column: 1 / -1; margin-top: 4px; }
+.item-opt {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 3px 0; font-size: var(--fs-sm);
+}
+.opt-size { color: var(--muted); }
+.opt-price { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ---- YORUMLAR ÖZETİ + GOOGLE LİNKİ ---- */
+.reviews-summary {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 18px; font-size: var(--fs-body);
+}
+.reviews-summary .avg { font-family: var(--font-head); font-size: 28px; font-weight: 700; color: var(--accent); }
+.reviews-summary .cnt { color: var(--muted); }
+.reviews-summary .stars-inline { color: var(--accent); letter-spacing: 2px; font-size: 16px; }
+.reviews-google-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 24px; padding: 12px 22px;
+  border: 1px solid var(--line); border-radius: 999px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--muted); transition: .2s;
+}
+.reviews-google-link:hover { border-color: var(--accent); color: var(--accent); }

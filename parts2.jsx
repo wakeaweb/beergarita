@@ -36,7 +36,7 @@ function Events() {
 
 function Gallery() {
   const [idx, setIdx] = useState2(-1);
-  const imgs = PUB.gallery.map((k) => PUB.images[k]);
+  const imgs = PUB.gallery.map((k) => k && (k.startsWith('http') || k.startsWith('/') || k.includes('.')) ? k : (PUB.images[k] || k));
   const close = () => setIdx(-1);
   const go = (d) => setIdx((p) => (p + d + imgs.length) % imgs.length);
 
@@ -89,12 +89,20 @@ function Stars({ n }) {
 }
 
 function Reviews() {
+  const summary = PUB.reviewsSummary || {};
   return (
     <section className="block" id="yorumlar">
       <div className="wrap">
         <div className="reveal" style={{ marginBottom: 36 }}>
           <p className="kicker">Misafirlerimiz</p>
           <h2 className="section-title">Ne diyorlar?</h2>
+          {summary.average && (
+            <div className="reviews-summary">
+              <span className="avg">{summary.average}</span>
+              <span className="stars-inline">{"★".repeat(Math.round(summary.average))}</span>
+              {summary.count && <span className="cnt">({summary.count} yorum)</span>}
+            </div>
+          )}
         </div>
         <div className="reviews">
           {PUB.reviews.map((r, i) =>
@@ -105,9 +113,15 @@ function Reviews() {
             </div>
           )}
         </div>
+        {summary.googleLinkUrl && (
+          <div className="reveal" style={{ textAlign: "center", marginTop: 10 }}>
+            <a className="reviews-google-link" href={summary.googleLinkUrl} target="_blank" rel="noopener">
+              ★ {summary.googleLinkLabel || "Google Yorumlar"}
+            </a>
+          </div>
+        )}
       </div>
     </section>);
-
 }
 
 function Contact() {

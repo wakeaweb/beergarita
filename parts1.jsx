@@ -158,7 +158,7 @@ function Menu() {
         </div>
         <div className="menu-body">
           <div className="menu-photo reveal">
-            <img src={PUB.images[cat.img]} alt={cat.name} />
+            <img src={cat.img && (cat.img.startsWith('http') || cat.img.startsWith('/') || cat.img.includes('.')) ? cat.img : (PUB.images[cat.img] || cat.img)} alt={cat.name} />
             <div className="cap">
               <div className="ttl">{cat.name}</div>
               <div className="sub">{cat.kicker}</div>
@@ -170,8 +170,20 @@ function Menu() {
                  style={it.popupImg ? { cursor: "pointer" } : {}}
                  onClick={() => it.popupImg && setModalItem({ src: it.popupImg, name: it.n })}>
                 <span className="n" style={it.popupImg ? { textDecoration: "underline", textDecorationStyle: "dotted", textUnderlineOffset: "4px" } : {}}>{it.n}</span>
-                <span className="p">{it.p}</span>
+                {/* Tek opsiyon veya fallback: tek fiyat göster */}
+                {(!it.options || it.options.length <= 1) && <span className="p">{it.p}</span>}
                 <span className="d">{it.d}</span>
+                {/* Çoklu opsiyon: açıklamanın altında size+price alt alta */}
+                {it.options && it.options.length > 1 && (
+                  <div className="item-options">
+                    {it.options.map((opt, oi) =>
+                      <div className="item-opt" key={oi}>
+                        <span className="opt-size">{opt.size || ''}</span>
+                        <span className="opt-price">₺{Math.round(opt.price)}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
             <p className="menu-note">Öne çıkan kalemler gösterilmektedir. Tam menü için mekânımıza bekleriz · Fiyatlara KDV dahildir.</p>

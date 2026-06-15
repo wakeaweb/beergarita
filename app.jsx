@@ -20,6 +20,13 @@ const HF_MAP = {
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [pubVer, setPubVer] = React.useState(0);
+
+  useEffectA(() => {
+    const onReady = () => setPubVer((prev) => prev + 1);
+    window.addEventListener("pubDataReady", onReady);
+    return () => window.removeEventListener("pubDataReady", onReady);
+  }, []);
 
   // Tema değişkenlerini <body>'ye uygula (zemin de güncellensin diye)
   useEffectA(() => {
